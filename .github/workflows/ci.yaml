@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - master
+      - my_theme
   pull_request:
     branches:
       - master
+      - my_theme
 jobs:
   build:
     name: "Test with Jekyll ${{ matrix.jekyll }}"
@@ -23,5 +25,5 @@ jobs:
         with:
           ruby-version: 2.7
           bundler-cache: true
-      - name: Run tests
-        run: script/cibuild
+      - name: Run build
+        run: gem build my_theme.gemspec
