@@ -1,42 +1,77 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel='icon' type='image/gif' href="{{ site.favicon_path  | default: '/favicon.gif' }}" />
+  <link rel='icon' type='image/gif' href="{{ site.favicon_path  | default: '/favicon.gif' }}" />
 
-    <style>
-      * {
-        text-decoration: none;
+  <style>
+    * {
+      text-decoration: none;
+    }
+
+    body {
+      background-color: #251b2d;
+      color: #b7daff;
+      margin: 0;
+    }
+
+    .page-link {
+      margin: 0 1.5vw;
+    }
+
+    .page-content {
+      margin: 0 auto;
+      padding: 0 1.5vw;
+    }
+
+    a {
+      color: #939a56;
+    }
+
+    a:hover {
+      color: #d9ec39;
+    }
+
+    a:visited {
+      color: #676e26;
+    }
+
+    hr {
+      background-color: #32273b;
+      height: 0.1px;
+      border: 0;
+    }
+
+    footer {
+      color: #3b546f;
+    }
+
+    /* desktop styles */
+    @media screen and (min-width: 801px) {
+      .page-content {
+        max-width: 51vw;
+        border: 1px solid black;
       }
-      body {
-        background-color: #09040d;
-        color: #b7daff;
-      }
-      a {
-        color: #492b9a;
-      }
-      a:visited {
-        color: #80789a;
-      }
-    </style>
-    
-  </head>
+    }
+  </style>
 
-  <body>
-    {%- include header.html -%}
+</head>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+<body>
+  {%- include header.html -%}
 
-    {%- include footer.html -%}
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
 
-  </body>
+  {%- include footer.html -%}
+
+</body>
 
 </html>
