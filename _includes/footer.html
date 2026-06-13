@@ -7,7 +7,7 @@
       <div class="footer-col">
       {%- if site.author %}
           {% if site.author.name -%}
-            <div class="author-name">created by {{ site.author.name | escape }}, {{ page.date | date: "%Y" }}</div>
+            <div class="author-name">created by {{ site.author.name | escape }}, {{ site.time | date: "%Y" }}</div>
           {% endif -%}
       {%- endif %}
       </div>
